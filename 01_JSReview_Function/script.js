@@ -12,5 +12,5 @@ let user_height = Number(prompt ('Enter your height: '));
 //Calling the Function
 let computed_BMI = BMI_Calculator(user_weight, user_height);
 
-//Consoling the Function
+//Consoling the output of the Function
 console.log (`Hi ${user_Name}! Your BMI is ${computed_BMI.toFixed(2)}`);
