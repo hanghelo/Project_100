@@ -6,7 +6,7 @@
 function operation (operationTouse,firstNumber, secondNumber) {
     let remarks;
 
-    if (operationTouse==="/" AND firstNumber === 0){
+    if (operationTouse==="/" && firstNumber === 0){
         remarks = 'Sorry 0 value cannot be divided';
     } else if (operationTouse === "+") {
         remarks = sumOperation (firstNumber,secondNumber);
@@ -19,7 +19,9 @@ function operation (operationTouse,firstNumber, secondNumber) {
     } else {
         remarks = "Invalid Operations";
     }
+    return remarks;
 }
+
 /* Addition*/
 function sumOperation (firstNumber, secondNumber) {
     let sum = firstNumber + secondNumber;
@@ -46,9 +48,9 @@ function divideOperation (firstNumber, secondNumber) {
 
 
 //Input of the Function
-let num1 = number(prompt('Enter the first number: '));
-let num2 = number(prompt('Enter the second number: '));
-let operation = prompt ('Enter the operation to use: ');
+let num1 = Number(prompt('Enter the first number: '));
+let num2 = Number(prompt('Enter the second number: '));
+let operation_input = prompt ('Enter the operation to use: ');
 
 
 
@@ -57,6 +59,11 @@ let sum_value = sumOperation (num1,num2);
 let difference_value = minusOperation (num1,num2);
 let product_value = timesOperation (num1,num2);
 let qoutient_value = divideOperation (num1,num2);
+let operation_output = operation (operation_input, num1, num2);
 
 
 //Consoling the Output of the Function
+console.log (`Your first number is ${num1}.
+    The second number is ${num2}.
+    The operation you chose was ${operation_input}.
+    And the answer is ${operation_output}`);
