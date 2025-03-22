@@ -7,7 +7,7 @@ function operation (operationTouse,firstNumber, secondNumber) {
     let remarks;
 
     if (operationTouse==="/" && firstNumber === 0){
-        remarks = 'Sorry 0 value cannot be divided';
+        remarks = '0 value cannot be divided';
     } else if (operationTouse === "+") {
         remarks = sumOperation (firstNumber,secondNumber);
     } else if (operationTouse === "-") {
@@ -17,7 +17,7 @@ function operation (operationTouse,firstNumber, secondNumber) {
     } else if (operationTouse === "/") {
         remarks = divideOperation (firstNumber,secondNumber);
     } else {
-        remarks = "Invalid Operations";
+        remarks = "invalid operation. You should put a valid math operation";
     }
     return remarks;
 }
@@ -66,4 +66,4 @@ let operation_output = operation (operation_input, num1, num2);
 console.log (`Your first number is ${num1}.
     The second number is ${num2}.
     The operation you chose was ${operation_input}.
-    And the answer is ${operation_output}`);
+    The answer is ${operation_output}.`);
