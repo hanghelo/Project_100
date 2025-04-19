@@ -2,6 +2,7 @@
 
 // Define
 function SayHI (name){
+    console.log (name);
     return name;
 }
 // Input
