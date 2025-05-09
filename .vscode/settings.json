@@ -45,6 +45,13 @@
             "icon": "link",
             "type": "tag",
             "greedy": true  // ← Highlight full line
+        },
+        "MY-NOTES": {
+            "foreground": "#000000",
+            "background": "#E6E6FA",   // Pastel Lavender
+            "iconColour": "#9370DB",   // Medium Purple
+            "icon": "notes",
+            "greedy": true
         }
     },
     "todo-tree.highlights.defaultHighlight": {
@@ -56,6 +63,7 @@
         "REVIEW",
         "HACK",
         "REF",
-        "WARN"
+        "WARN",
+        "MY-NOTES"
     ]
 }
