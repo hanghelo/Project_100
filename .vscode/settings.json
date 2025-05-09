@@ -2,43 +2,49 @@
     "todo-tree.tree.autoRefresh": true,
     "todo-tree.highlights.customHighlight": {
         "WARN": {
-            "foreground": "white",
-            "background": "red",
-            "iconColour": "red",
+            "foreground": "#FFFFFF",
+            "background": "#FFB6C1",  // Pastel Pink
+            "iconColour": "#FF69B4",  // Hot Pink
             "icon": "alert",
-            "type": "text"
+            "type": "text",
+            "greedy": true  // ← Highlight full line
         },
         "TODO": {
-            "foreground": "black",
-            "background": "green",
-            "iconColour": "green",
+            "foreground": "#000000",
+            "background": "#98FB98",  // Pastel Green
+            "iconColour": "#3CB371",   // Medium Sea Green
             "icon": "check",
-            "type": "text"
+            "type": "text",
+            "greedy": true  // ← Highlight full line
         },
         "FIXME": {
-            "foreground": "black",
-            "background": "red",
-            "iconColour": "red",
-            "icon": "bug"
+            "foreground": "#000000",
+            "background": "#FFD700",   // Pastel Gold
+            "iconColour": "#FFA500",   // Orange
+            "icon": "bug",
+            "greedy": true  // ← Highlight full line
         },
         "REVIEW": {
-            "foreground": "black",
-            "background": "cyan",
-            "iconColour": "lightblue",
-            "icon": "eye"
+            "foreground": "#000000",
+            "background": "#ADD8E6",   // Pastel Blue
+            "iconColour": "#87CEEB",    // Sky Blue
+            "icon": "eye",
+            "greedy": true  // ← Highlight full line
         },
         "HACK": {
-            "foreground": "black",
-            "background": "#FFA500",
-            "iconColour": "orange",
-            "icon": "alert"
+            "foreground": "#000000",
+            "background": "#FFA07A",   // Pastel Coral
+            "iconColour": "#FF6347",    // Tomato
+            "icon": "alert",
+            "greedy": true  // ← Highlight full line
         },
         "REF": {
-            "foreground": "black",
-            "background": "grey",
-            "iconColour": "grey",
+            "foreground": "#000000",
+            "background": "#D3D3D3",   // Pastel Gray
+            "iconColour": "#A9A9A9",   // Dark Gray
             "icon": "link",
-            "type": "tag"
+            "type": "tag",
+            "greedy": true  // ← Highlight full line
         }
     },
     "todo-tree.highlights.defaultHighlight": {
