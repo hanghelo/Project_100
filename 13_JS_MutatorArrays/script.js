@@ -24,18 +24,25 @@ let multiples = [];
 
 for (let i=1; i<=30; i++ ) {
 
-    if ( i % 3 == 0 && i % 5 == 0 ) {
-        console.log (`${i} FizzBuzz`);
-        multiples.push (i);                 // Save the for loop output into the array
-    } else if ( i % 3 == 0 ) {
+    // For multiples of 3 print the number and the word “Fizz”
+    if ( i % 3 == 0  ) {
         console.log (`${i} Fizz`);
         multiples.push (i);                 // Save the for loop output into the array
-    } else if ( i % 5 == 0 ) {
+    }
+    
+    // For multiple of 5 print the number and the word “Buzz”.
+    else if ( i % 5 == 0 ) {
         console.log (`${i} Buzz`);
         multiples.push (i);                 // Save the for loop output into the array
+    } 
+    
+    // At the end of the loop, print all the numbers which are multiples of 3 & 5.
+    else if ( i % 3 == 0 && i % 5 == 0 ) {
+        console.log (`${i} FizzBuzz`);
+        multiples.push (i);                 // Save the for loop output into the array
     } else {
-        console.log (i);
-                                            // If the number is not divisible by 3 or 5 the number will not be saved in the mutiples array
+        //console.log (i);
+                                            // If the number is not divisible by 3 or 5 the number will not be printed nor be saved in the mutiples array
     }
 }
 
