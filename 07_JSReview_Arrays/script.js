@@ -78,6 +78,7 @@ console.log (pokemon);
 
 
 // MY-NOTES: SEARCHING OR LOOKUP AN ELEMENT IN AN ARRAY USING indexOf
+// Searches an element of an array and returns its position or the index number
 const pencilCase = ['ballpen', 'eraser', 'pencil', 'glue'];
 //index reference:     0           1         2        3
 const index = pencilCase.indexOf ('pencil');
@@ -89,3 +90,12 @@ console.log (pencilCase.indexOf('eraser'));     //Output: 1
 //OUTPUT IF THE ITEM IS EXISTING IN THE ARRAY
 console.log (pencilCase.indexOf('mouse'));      //Output: -1
 console.log (pencilCase.indexOf('battery'));    //Output: -1
+
+
+// MY-NOTES: "IF CONTAINS" SEARCH USING includes
+// Checks if an array contains a sepcified element
+if (pencilCase.includes('pencil')) {
+    console.log ('There is a pencil in the keyword');
+} else {
+    console.log ('There is no pencil in the keyword');
+}
