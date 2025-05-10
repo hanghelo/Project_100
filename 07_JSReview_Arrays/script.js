@@ -99,3 +99,42 @@ if (pencilCase.includes('pencil')) {
 } else {
     console.log ('There is no pencil in the keyword');
 }
+
+let myCurrentThoughts = ["learning", "is", "fun"];
+//p ush(!) - push an element to the end of the array
+myCurrentThoughts.push("!");             // ["learning", "is", "fun", "!"]
+console.log(myCurrentThoughts);
+
+//pop() - pop the last item in the array
+myCurrentThoughts.pop();                 // "!"
+console.log(myCurrentThoughts);          // ["learning", "is", "fun"]
+
+//reverse() - reverse the order of the elements in the array
+myCurrentThoughts.reverse();             // ["fun", "is", "learning"]
+console.log(myCurrentThoughts);
+
+//indexOf(el) - find the index of an element in the array
+console.log(myCurrentThoughts.indexOf("fun"));        // 0
+
+//shift() - shift to remove the first element in the array
+myCurrentThoughts.shift();                // "fun"
+console.log(myCurrentThoughts);           // ["is", "learning"]
+
+//unshift(!) - add to the front of the array
+myCurrentThoughts.unshift("practicing");
+console.log(myCurrentThoughts);           // ["practicing", "is", "learning"]
+
+//sort() - sorts an array alphabetically
+myCurrentThoughts.sort();
+console.log(myCurrentThoughts);           // ["is", "learning", "practicing"]
+
+// sort with reverse
+myCurrentThoughts.sort().reverse();
+console.log(myCurrentThoughts);           // ["practicing", "learning", "is"]
+
+//splice(starting index, count) - remove parts of an array
+myCurrentThoughts.splice(0,2);            // ["practicing", "learning"]
+console.log(myCurrentThoughts);           // ["is"]
+
+//slice(start, end) - copy parts of an array
+let verb = myCurrentThoughts.slice(1,1);    // "is"
