@@ -45,8 +45,47 @@ pets[2] = 'Max';
 console.log(pets);
 
 // MY-NOTES: ADD ELEMENT IN AN ARRAY
-pets[pets.length] = 'Milo';
-console.log(pets);
+
+//Adds the element in the beginning element of an array
+const grocery = ['Milk','Bread','Biscuits'];
+console.log (grocery);
+grocery.unshift('Chocolate');      
+console.log (grocery);
+
+
+
+
+//Adds the element in the last element of an array
+const pokemon = ['Charizard', 'Blastoise', 'Onyx']
+console.log(pokemon);
+console.log(pokemon.length);
+
+pokemon[pokemon.length] = 'Pikachu';
+console.log(pokemon);
+console.log(pokemon.length);
+
+pokemon.push('Togepi');             // Standard way of adding an element as the last item in the array.
+console.log(pokemon);
+console.log(pokemon.length);
 
 
 // MY-NOTES: DELETE ELEMENT IN AN ARRAY
+pokemon.pop(pokemon);               // Deletes the last element of an array
+console.log (pokemon);
+
+pokemon.shift(pokemon);             // Deletes the first element of an array
+console.log (pokemon);
+
+
+// MY-NOTES: SEARCHING OR LOOKUP AN ELEMENT IN AN ARRAY USING indexOf
+const pencilCase = ['ballpen', 'eraser', 'pencil', 'glue'];
+//index reference:     0           1         2        3
+const index = pencilCase.indexOf ('pencil');
+console.log (index); //Output: "2" since pencil is in the index 2
+
+//OUTPUT IF THE ITEM IS EXISTING IN THE ARRAY
+console.log (pencilCase.indexOf('eraser'));     //Output: 1
+
+//OUTPUT IF THE ITEM IS EXISTING IN THE ARRAY
+console.log (pencilCase.indexOf('mouse'));      //Output: -1
+console.log (pencilCase.indexOf('battery'));    //Output: -1
