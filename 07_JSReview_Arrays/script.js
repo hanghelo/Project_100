@@ -70,10 +70,10 @@ console.log(pokemon.length);
 
 
 // MY-NOTES: DELETE ELEMENT IN AN ARRAY
-pokemon.pop(pokemon);               // Deletes the last element of an array
+pokemon.pop();               // Deletes the last element of an array
 console.log (pokemon);
 
-pokemon.shift(pokemon);             // Deletes the first element of an array
+pokemon.shift();             // Deletes the first element of an array
 console.log (pokemon);
 
 
