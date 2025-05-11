@@ -61,6 +61,7 @@ console.log (checking);
 // some()
 // opposite of every
 // if atleast 1 element statifies the condition in the callback function, then it will return TRUE
+// some () also operates at the array level and not the individual item level.
 let checkSome = numbers.some (num => num > 1);
 console.log (checkSome);
 
