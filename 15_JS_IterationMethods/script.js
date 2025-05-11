@@ -20,6 +20,7 @@ function computeSquare (element, index, array) {         // element = the value 
     // console.log(element, index, array);
     // console.log(`The element ${element} is on index ${index}`);
     console.log (element * element);                     // Output is not per line and not returned as an array because console.log() automatically adds a newline after each call.
+    // But if you want to collect results, you must manually push into an array (or use map).
 }
 
 
