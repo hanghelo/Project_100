@@ -7,13 +7,14 @@
 // The forEach() method is not executed for empty elements.
 
 const numbers = [1, 2, 3, 4, 5];
+let square = [];
 
 
 // The forEach() method calls a function for each element in an array.
 // In the example below, the computeSquare is the callback function. Callback function is a function passed as an argument and might be to another function.
 // The function is declare outside the numbers.forEach(computeSquare);
 numbers.forEach(computeSquare);
-
+compute = [];
 
 // This is the callback function
 function computeSquare (element, index, array) {         // element = the value of item in the array ; index = position ; array = list or object
