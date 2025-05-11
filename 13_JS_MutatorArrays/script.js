@@ -1,49 +1,53 @@
-/*
+// MY-NOTES: MUTATOR METHODS (CHANGING METHODS)
 
-Create a JavaScript program that iterates through the integers between 1 and 100.
+const array = ['a', 'b', 'c', 'd', 'e,'];
 
-Challenges:
-Create an empty array named ‘multiples’ for the numbers that are multiples of 3 & 5.
+// MY-NOTES: REVERSING ARRAY ORDER
 
-Log the iteration on the console.
+// ARRANGE THE ITEMS IN THE ARRAY IN DESCENDING ORDER
+// REVERSE
+console.log (array.reverse());
+console.log (array);
 
-For multiples of 3 print the number and the word “Fizz”
+const list = ['z', 'd', 'c', 'd', 'a'];
+console.log(list.reverse());
 
-For multiple of 5 print the number and the word “Buzz”.
+// MY-NOTES: SORTING ARRAY ORDER
+// ARRANGE THE ITEMS IN THE ARRAY IN ASCENDING ORDER / ALPHABETICALLY
+// SORT
+console.log (list.sort());
+console.log (list);
 
-Print "FizzBuzz" for numbers that are multiples of three and five.
 
-At the end of the loop, print all the numbers which are multiples of 3 & 5.
+// MY-NOTES: REMOVES OR REPLACES OR EXTRACT NEW ELEMENTS USING SPLICE
+const alphabet = ['a', 'b', 'c', 'd', 'e'];
+//index ref:       0    1    2    3    4
 
-*/
+// REMOVES THE ITEM/S USING A STARTING ARRAY INDEX
+// EXTRACTS ITEMS FROM ARRAY USING INDEX
+console.log (alphabet.splice(2));          // In the example provided, 2 is the starting index, and indeces before 2 will be separated/removed.
+                                           // It gets or extracts the elements starting from index 2 and so on.
+                                           // Output: ['c', 'd' ,'e']
 
-// --------------------------------
+console.log (alphabet);                    // Now, what is remaining in the array are the following:
+                                           // Output: ['a', 'b']
 
-/* Create an empty array named ‘multiples’ for the numbers that are multiples of 3 & 5.*/
-let multiples = [];
+// MY-NOTES: REMOVES THE LAST ELEMENT
+const vowel = ['a', 'e', 'i', 'o', 'u'];
+console.log (vowel);
 
-for (let i=1; i<=30; i++ ) {
+const lastElem = vowel.splice(-1);         //-1 is used to select the last element
+console.log (vowel);                       // Output: ['a', 'e', 'i', 'o']
 
-    // For multiples of 3 print the number and the word “Fizz”
-    if ( i % 3 == 0  ) {
-        console.log (`${i} Fizz`);
-        multiples.push (i);                 // Save the for loop output into the array
-    }
-    
-    // For multiple of 5 print the number and the word “Buzz”.
-    else if ( i % 5 == 0 ) {
-        console.log (`${i} Buzz`);
-        multiples.push (i);                 // Save the for loop output into the array
-    } 
-    
-    // At the end of the loop, print all the numbers which are multiples of 3 & 5.
-    else if ( i % 3 == 0 && i % 5 == 0 ) {
-        console.log (`${i} FizzBuzz`);
-        multiples.push (i);                 // Save the for loop output into the array
-    } else {
-        //console.log (i);
-                                            // If the number is not divisible by 3 or 5 the number will not be printed nor be saved in the mutiples array
-    }
-}
+// MY-NOTES: SAMPLE EXTRACTION USING SPLICE
+const pokemon = ['pikachu', 'squirtle', 'charmander', 'bulbasaur', 'piplup', 'torchick', 'rowlet', 'chikorita', 'cyndaquil', 'totodile'];
 
-console.log (multiples);
+// 1. SORT
+pokemon.sort();
+console.log(pokemon);
+
+// 2. EXTRACT
+// I want to extract all pokemon that starts with index 1 and ends with 3
+
+const extractedPokemon = pokemon.splice(1,3);           // removed ['charmander', 'chikorita', 'cyndaquil'] and assign to extractedPokemon
+console.log (extractedPokemon);
