@@ -50,4 +50,6 @@ console.log(pokemon);
 // I want to extract all pokemon that starts with index 1 and ends with 3
 
 const extractedPokemon = pokemon.splice(1,3);           // removed ['charmander', 'chikorita', 'cyndaquil'] and assign to extractedPokemon
+
+// 3. CONSOLE LOG TO CHECK THE EXTRACTION
 console.log (extractedPokemon);
