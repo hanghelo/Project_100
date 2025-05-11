@@ -48,7 +48,7 @@
         },
         "MY-NOTES": {
             "foreground": "#000000",
-            "background": "#E6E6FA",   // Pastel Lavender
+            "background": "#C1E1C1",   // Pastel Lavender
             "iconColour": "#9370DB",   // Medium Purple
             "icon": "notes",
             "greedy": true
