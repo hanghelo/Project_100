@@ -1,75 +1,125 @@
-// MY-NOTES: ITERATION METHODS
+// MY-NOTES: DATA TRANSFORMATION
 
-// MY-NOTES: FOR EACH
-// MY-NOTES: FOR EACH ITERATION - LONG METHOD
-// FOR EACH Iteriation accepts up to three arguments
-// The forEach() method calls a function for each element in an array.
-// The forEach() method is not executed for empty elements.
-
-const numbers = [1, 2, 3, 4, 5];
-let square = [];
+const numbers = [6, 7, 2, 8, 1];
 
 
-// The forEach() method calls a function for each element in an array.
-// In the example below, the computeSquare is the callback function. Callback function is a function passed as an argument and might be to another function.
-// The function is declare outside the numbers.forEach(computeSquare);
-numbers.forEach(computeSquare);
-compute = [];
+// MY-NOTES: 01. map ()
+// Use map() method kapag gusto mong baguhin lahat ng items sa isang array nang isang bagsakan at isave sa bagong array.
+// Use map() method if gusto mo magperform ng calculation sa isang array at isave sa bagong array ang computed value.
 
-// This is the callback function
-function computeSquare (element, index, array) {         // element = the value of item in the array ; index = position ; array = list or object
-    // console.log(element, index, array);
-    // console.log(`The element ${element} is on index ${index}`);
-    console.log (element * element);
-}
+/************************************/
 
+// MY-NOTES: 01.1. map () - LONG METHOD
+// 1.1 map () LONG METHOD
+const newArray = numbers.map(function(element){
+    //return value for new array
 
-// MY-NOTES: FOR EACH ITERATION - SIMPLIFIED METHOD
+    // I want to double the value of elements from numbers map
+    return element * 2;
+})
 
-// MY-NOTES: FOR EACH ITERATION - USING ANONYMOUS FUNCTION
-// We place the function inside the forEach argument
-// We use an "ANONYMOUS FUNCTION" (a function without a name) since it can be used as argument for a function.
-numbers.forEach (function (element) {
-    console.log (element * element);
+console.log (newArray);     // Note that the number.map function is saved to newArray
+// Output: [12, 14, 4, 16, 2]
+
+console.log (numbers);      // Consoling this to compare to the newArray
+// Output: [6, 7, 2, 8, 1]
+
+// MY-NOTES: 01.2. map () - SHORT METHOD
+// 1.2 map () SHORT METHOD USING ARROW FUNCTION
+const anotherArray = numbers.map ( elem => elem * 3 );
+console.log (anotherArray);
+/************************************/
+
+// MY-NOTES: 02. filter ()
+
+//filter
+// returns a new array with all the elements that satifies the condition specified in the function
+
+// Example: #1
+// I want to filter the array using element.
+// If the element is greater than 5, then the elements will be save to an new array
+const filterArray = numbers.filter( num => {
+   return num > 5;
 });
 
-// MY-NOTES: FOR EACH ITERATION - USING ARROW FUNCTION
-numbers.forEach ( element => console.log (element * element)) ;
+console.log (filterArray);  // Consoling this to display the array contianing more than the value of 5
+// Output: [6, 7, 8]
+
+console.log (numbers);      // Consoling this to compare to the newArray
+// Output: [6, 7, 2, 8, 1]
+
+// MY-NOTES: 02.1 filter () - LONG METHOD
+// Example: #2 - LONG VERSION
+// I want to filter all the even numbers in the array.
+// If the element is even, then the elements will be save to an new array
+const filterEven = numbers.filter( even => {
+   if (even % 2 == 0) {
+    return even;
+   }
+   else {
+   }
+});
+
+console.log (filterEven);
+// Output: [6, 2, 8]
+
+// MY-NOTES: 02.1 filter () - SHORT METHOD
+// Example: #2.1 - SHORT VERSION
+const evenNumbers = numbers.filter ( even => even % 2 == 0 );
+console.log (evenNumbers);
+// Output: [6, 2, 8]
 
 
 
-// MY-NOTES: EVERY
+// MY-NOTES: 03. reduce ()
+// Ang reduce() ay isang paraan (method) para pagsama-samahin o i-combine ang lahat ng items sa isang array at gawin itong iisang value.
 
-// every()
+/*
+Parang pagbibilang ng sukli sa mga barya:
 
-// Check if all numbers in the array meet condition
-// array.every() operates at the array level, not the individual item level. It checks if all elements in the entire array satisfy a condition and returns a single boolean (true/false) for the whole array, not per item.
+    Mayroon kang maraming coins (5-peso, 10-peso, 1-peso, etc.) sa isang lalagyan (array)
 
-// num is used as the function parameter
-// numb > 3 is the condition within the function body 
-let check = numbers.every (num => num > 3);
-console.log (check);
-// Output: false
+    Gusto mong malaman kung magkano lahat ang pera mo
 
-let checking = numbers.every (num => num >= 1);
-console.log (checking);
-// Output: True
+    Gamit ang reduce(), isa-isahin mo at i-add lahat ng coins para malaman ang kabuuang halaga
+
+    Ginagamit ang reduce() kapag:
+    Kailangan mong i-compute ang total ng mga numbers sa array
+
+    Note: Kapag magkakaiba ang data types ng elements sa array, 
+            - if may string sa array, ikokonvert ng system by defaul lahat sa string at gagawin ang concatenation.
+
+            -if purely number, then reduce () can be performed.
+    
+    reduce () has 4 arguments
+            - previousValue =
+            - currentValue = 
+            - currentIndex =
+            - array =
+ */
+
+// Add the entire array elements
+const sum = numbers.reduce ((previousValue, currentValue) => {
+    return previousValue + currentValue
+
+});
+
+console.log (sum);
+// Output: 24
 
 
-// MY-NOTES: SOME
+/*
 
-// some()
-// opposite of every
-// if atleast 1 element statifies the condition in the callback function, then it will return TRUE
-// some () also operates at the array level and not the individual item level.
-let checkSome = numbers.some (num => num > 1);
-console.log (checkSome);
+Note:
 
-// since atleast 1 num from the numbers array is greater than [1, 2, 3, 4, 5], then it satisfies the conditiion num > 1.
-// Output: True
+    If the argument of the function you need is only 1 argument it is best to use an arrow function and you can no longer use bracker {}.
 
+    If the argument of the function you need is greater than 1, it is best to use an arrow function with bracket and "return" syntax and it is more recommended for complex computation
 
+    Case	                       Recommended Style	                Example
+    Single simple operation        Concise (no braces)                  x => x * 2
+    Multiple operations	           Block (with braces + return)	        (x, y) => { const sum = x + y; return sum * 2; }
+    Debugging needed	           Block (with braces)	                (x) => { console.log(x); return x * 2; }
+    Object literal return	       Block or parentheses	                () => ({ name: 'John' })
 
-
-
-
+*/
