@@ -47,3 +47,23 @@ while (i < 10) {
     console.log(i);
 }
 
+
+
+// MY-NOTES: COMBINING ELEMENTS FROM 3 DIFFERENT ARRAYS TO CREATE AN ID
+const letters = ['a', 'b', 'c', 'd', 'e'];
+const numbers = [1, 2, 3, 4, 5];
+const symbols = ["!", "@", "#", "$", "5"];
+
+
+for (i=0; i<numbers.length; i++) {       
+    combined = letters[i] + numbers[i] + symbols[i];
+    console.log(combined);
+}
+
+
+let j = 0;
+while ( j < numbers.length ) {
+    j++;
+    let combined = letters[j] + numbers[j] + symbols[j];
+    console.log(combined);
+}
