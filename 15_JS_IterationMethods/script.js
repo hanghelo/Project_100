@@ -34,8 +34,8 @@ numbers.forEach (function (element) {
 });
 
 // MY-NOTES: FOR EACH ITERATION - USING ARROW FUNCTION
-numbers.forEach ( element => console.log (element * element)) ;
-
+let now = numbers.forEach ( element => console.log (element * element)) ;
+console.log (now);
 
 
 // MY-NOTES: EVERY
