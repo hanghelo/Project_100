@@ -37,19 +37,6 @@ function deleteTask () {
 
 deleteTask ();
 
-/*****************************************/
-const fruits = [
-    "Apple",
-    "Banana",
-    "Orange",
-    "Mango",
-    "Strawberry",
-    "Grapes",
-    "Pineapple",
-    "Watermelon",
-    "Kiwi",
-    "Peach"
-];
 
 
 
