@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM - VAT and Withholding Tax Calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <style>
+        body {
+            height: 100vh;
+            width: 50%;
+            max-width: 800px;
+            min-width: 400px;
+            margin: 0 auto;
+            background: linear-gradient(to top left, #9051A8, #02A2AA);
+        }
+
+        h1 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 35px;
+            line-height: 1.3;
+            width: 100%;
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        p, label, th {
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="gametitle">VAT and WHT Tax Calculator</h1>
+    <p>This program is intended to compute for the VAT Inclusive, Withholding Tax and VAT Exclusive of a particular payment.</p>
+
+
+    <div class="taxcomputationform">
+
+        <table border="1">
+            <tr>
+                <th>Labels</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <!-- Total Sales (VAT Inclusive Field) -->
+                <td><label for="totalSalesVatIncl" class="totalSalesVatIncl">Enter the collected amount:</label></td>
+                <td><input type="input" id="totalSalesVatInclField" class="totalSalesVatInclField" placeholder="Sample: 100000.00" value="100000" autofocus></td>
+            </tr>
+            <tr>
+                <!-- Less:VAT -->
+                <td><label for="totalSalesVatIncl" class="totalSalesVatIncl">Less: VAT</label></td>
+                <td><input type="input" id="lessVATField" class="lessVATFieldField disabledField" placeholder="0.00" disabled></td>
+            </tr>
+            <tr>
+                <!-- Total_1 -->
+                <td><label for="Total_1" class="Total_1">Total</td>
+                <td><input type="input" id="Total_1Field" class="Total_1Field disabledField" placeholder="0.00" disabled></td>
+            </tr>
+            <tr>
+                <!-- Less:Withholding Tax -->
+                <td><label for="lessWithholdingTax" class="lessWithholdingTax">Less: Withholding Tax</td>
+                <td><input type="input" id="lessWithholdingTaxField" class="lessWithholdingTaxField disabledField" placeholder="0.00" disabled></td>
+            </tr>
+            <tr>
+                <!-- Total_2 -->
+                <td><label for="2" class="Total_2">Total</td>
+                <td><input type="input" id="Total_2Field" class="Total_2Field disabledField" placeholder="0.00" disabled></td>
+            </tr>
+            <tr>
+                <!-- Add:VAT -->
+                <td><label for="addVAT" class="addVAT">Add: VAT</td>
+                <td><input type="input" id="addVATField" class="addVATField disabledField" placeholder="0.00" disabled></td>
+            </tr>
+            <tr>
+                <!-- Amount Due -->
+                <td><label for="amountDue" class="amountDue">Amount Due</td>
+                <td><input type="input" id="amountDueField" class="amountDueField disabledField" placeholder="0.00" disabled></td>
+            </tr>
+            <tr>
+                <!-- Vatable Sales -->
+                <td><label for="vatableSales" class="vatableSales">Vatable Sales </td>
+                <td><input type="input" id="vatableSalesField" class="vatableSalesField disabledField" placeholder="0.00" disabled></td>
+            </tr>
+            <tr>
+                <!-- VAT Amount -->
+                <td><label for="VATAmount" class="VATAmount">VAT Amount</td>
+                <td><input type="input" id="VATAmountField" class="VATAmountField disabledField" placeholder="0.00" disabled></td>
+            </tr>
+            <tr>
+                <!-- Total Sales -->
+                <td><label for="totalSales" class="totalSales">Total Sales</td>
+                <td><input type="input" id="totalSalesField" class="totalSalesField disabledField" placeholder="0.00" disabled></td>
+            </tr>
+        </table>
+
+        
+
+        <br>
+        <input type="submit" value="Compute Now" class="computeNowBTN" id="computeNowBTN" >
+        <input type="submit" value="Reset" class="resetBTN" id="computeNowBTN">
+    </div>
+
+    
+    <script src="script.js"></script>
+</html>
