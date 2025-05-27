@@ -30,6 +30,34 @@
             color: white;
         }
 
+        .endgame {
+            /* Positioning */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* True center */
+            z-index: 1000;
+            
+            /* Dimensions */
+            width: 60%;
+            height: 50%;
+            
+            /* Flexbox centering for content */
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            /* Styling */
+            background-color: rgba(227, 218, 201, 0.95);
+            color: #333;
+            font-size: 24px;
+            text-align: center;
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
     </style>
 </head>
 <body>
@@ -48,9 +76,13 @@
         <p class="lowOrHi"></p>
     </div>
 
-    <div class="playOrEnd">
+    <div class="playOrEnd" hidden>
         <input type="submit" value="Play Again" class="playAgain">
         <input type="submit" value="Cancel" class="cancel">
+    </div>
+
+    <div class="endgame">
+        Thank you for playing!
     </div>
     <script src="script.js"></script>
 </html>

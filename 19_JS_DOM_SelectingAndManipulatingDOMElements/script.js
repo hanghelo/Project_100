@@ -30,6 +30,10 @@ const lowOrHi = document.querySelector ('.lowOrHi');
 const guessField = document.querySelector ('.guessField');
 const guessSubmit = document.querySelector ('.guessSubmit');
 
+const playOrEnd = document.querySelector ('.playOrEnd');
+const playAgain = document.querySelector ('.playAgain');
+
+
 // MY-NOTES: Defining the start of guess count
 let guessCount = 1;
 
@@ -57,12 +61,14 @@ function checkGuess () {
         lastResult.style.backgroundColor = 'green';
         lowOrHi.textContent = '';
         setGameOver ()
+        youCanPlayAgain ()
 
     } else if ( guessCount === 10 ) {
         lastResult.textContent = 'Game Over!!! :(';
         lastResult.style.backgroundColor = 'red';
         lowOrHi.textContent = '';
         setGameOver ()
+        hideAndDisplay ()
 
     } else {
         lastResult.textContent = `Wrong! You only have ${Math.abs(guessCount - 10)} guesses remaining.`;
@@ -80,7 +86,7 @@ function checkGuess () {
 
     guessCount ++ ;
     guessField.value = ''; // Empty the guessField
-    guessField.Focus ();   // Focus on the guessField
+    guessField.focus ();   // Focus on the guessField
 }
 
 
@@ -95,3 +101,45 @@ function setGameOver () {
     guessField.disabled = true;     // Setting the field  disable so the user can no longer guess
     guessSubmit.disabled = true;    // Setting the button  disable so the user can no longer submit
 }
+
+function hideAndDisplay () {
+    playOrEnd.hidden = false;        // Setting the play or end to hidden
+}
+
+function youCanPlayAgain () {
+
+    guessField.disabled = false;     // Setting the field  disable so the user can no longer guess
+    guessSubmit.disabled = false;    // Setting the button  disable so the user can no longer submit
+
+    guessCount = 1;
+    randomNumber = Math.floor(Math.random() * 100 + 1); // dineclare yung randomNumber para mag-generate siya ng panibagong value
+    console.log (randomNumber) // For the purpose na icheck sa console log
+
+    guesses.textContent = 'Previous Guesses: '; // Icleclear ko yung previous by copypasting yung previous code, basically ibalik siya sa umpisa.
+    lastResult.textContent = '';
+    lastResult.style.backgroundColor = '';
+    lowOrHi.textContent = '';
+
+    guessField.value = '';
+    guessField.focus();
+
+    playOrEnd.hidden = true;
+}
+
+playAgain.addEventListener ('click', youCanPlayAgain);
+
+
+// 01. Select the element and assign it to a variable
+const cancelBtn = document.querySelector ('.cancel');
+const endgame = document.querySelector('.endgame');
+
+
+// 03. Define the function
+function cancel () {
+    endgame.style.display = 'none';
+    endgame.style.display = 'flex';
+}
+
+// 02. Identify the event to use and the function name
+cancelBtn.addEventListener ('click', cancel);
+
