@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Selecting And Manipulating DOM Elements</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <style>
+        body {
+            height: 100vh;
+            width: 50%;
+            max-width: 800px;
+            min-width: 400px;
+            margin: 0 auto;
+            background: linear-gradient(to top left, #9051A8, #02A2AA);
+        }
+
+        h1 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 35px;
+            line-height: 1.3;
+            width: 100%;
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        p, .guessfieldtitle {
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="gametitle">Numbering Guessing Game Using DOM Manipulation</h1>
+    <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We''' tell you if your guess was too high or too low.</p>
+
+    <div class="form">
+        <label for="guessField" class="guessfieldtitle" >Enter a guess:</label>
+        <input type="text" id="guessField" class="guessField">
+        <input type="submit" value="Submit Guess" class="guessSubmit">
+    </div>
+
+    <div class="resultParameters">
+        <p class="guesses"></p>
+        <p class="lastResult"></p>
+        <p class="lowOrHi"></p>
+    </div>
+
+    <div class="playOrEnd">
+        <input type="submit" value="Play Again" class="playAgain">
+        <input type="submit" value="Cancel" class="cancel">
+    </div>
+    <script src="script.js"></script>
+</html>
