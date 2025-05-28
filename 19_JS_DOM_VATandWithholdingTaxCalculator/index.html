@@ -30,6 +30,53 @@
             color: white;
         }
 
+        /* Tooltip container */
+        .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+        }
+
+        /* Tooltip text */
+        .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+
+        /* Position the tooltip text */
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -60px;
+
+        /* Fade in tooltip */
+        opacity: 0;
+        transition: opacity 0.3s;
+        }
+
+        /* Tooltip arrow */
+        .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+        }
+
+        /* Show the tooltip text when you mouse over the tooltip container */
+        .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+        }
+
     </style>
 </head>
 <body>
@@ -47,52 +94,52 @@
             <tr>
                 <!-- Total Sales (VAT Inclusive Field) -->
                 <td><label for="totalSalesVatIncl" class="totalSalesVatIncl">Enter the collected amount:</label></td>
-                <td><input type="input" id="totalSalesVatInclField" class="totalSalesVatInclField" placeholder="Sample: 100000.00" value="100000" autofocus></td>
+                <td><input type="input" id="totalSalesVatInclField" class="totalSalesVatInclField" placeholder="Sample: 100000.00" title="VAT-inclusive total amount collected from customer" autofocus></td>
             </tr>
             <tr>
                 <!-- Less:VAT -->
                 <td><label for="totalSalesVatIncl" class="totalSalesVatIncl">Less: VAT</label></td>
-                <td><input type="input" id="lessVATField" class="lessVATFieldField disabledField" placeholder="0.00" disabled></td>
+                <td><input type="input" id="lessVATField" class="lessVATFieldField disabledField" placeholder="0.00" title="VAT Output" disabled></td>
             </tr>
             <tr>
                 <!-- Total_1 -->
                 <td><label for="Total_1" class="Total_1">Total</td>
-                <td><input type="input" id="Total_1Field" class="Total_1Field disabledField" placeholder="0.00" disabled></td>
+                <td><input type="input" id="Total_1Field" class="Total_1Field disabledField" placeholder="0.00" title="Net Sales" disabled></td>
             </tr>
             <tr>
                 <!-- Less:Withholding Tax -->
                 <td><label for="lessWithholdingTax" class="lessWithholdingTax">Less: Withholding Tax</td>
-                <td><input type="input" id="lessWithholdingTaxField" class="lessWithholdingTaxField disabledField" placeholder="0.00" disabled></td>
+                <td><input type="input" id="lessWithholdingTaxField" class="lessWithholdingTaxField disabledField" placeholder="0.00" title="2% of net sales" disabled></td>
             </tr>
             <tr>
                 <!-- Total_2 -->
                 <td><label for="2" class="Total_2">Total</td>
-                <td><input type="input" id="Total_2Field" class="Total_2Field disabledField" placeholder="0.00" disabled></td>
+                <td><input type="input" id="Total_2Field" class="Total_2Field disabledField" placeholder="0.00" title="Net amount youll actually receive after WHT" disabled></td>
             </tr>
             <tr>
                 <!-- Add:VAT -->
                 <td><label for="addVAT" class="addVAT">Add: VAT</td>
-                <td><input type="input" id="addVATField" class="addVATField disabledField" placeholder="0.00" disabled></td>
+                <td><input type="input" id="addVATField" class="addVATField disabledField" placeholder="0.00" title="Adding back VAT" disabled></td>
             </tr>
             <tr>
                 <!-- Amount Due -->
                 <td><label for="amountDue" class="amountDue">Amount Due</td>
-                <td><input type="input" id="amountDueField" class="amountDueField disabledField" placeholder="0.00" disabled></td>
+                <td><input type="input" id="amountDueField" class="amountDueField disabledField" placeholder="0.00" title="Amount to receive from customer" disabled></td>
             </tr>
             <tr>
                 <!-- Vatable Sales -->
                 <td><label for="vatableSales" class="vatableSales">Vatable Sales </td>
-                <td><input type="input" id="vatableSalesField" class="vatableSalesField disabledField" placeholder="0.00" disabled></td>
+                <td><input type="input" id="vatableSalesField" class="vatableSalesField disabledField" placeholder="0.00" title="Sales amount subject to VAT (VAT-exclusive)" disabled></td>
             </tr>
             <tr>
                 <!-- VAT Amount -->
                 <td><label for="VATAmount" class="VATAmount">VAT Amount</td>
-                <td><input type="input" id="VATAmountField" class="VATAmountField disabledField" placeholder="0.00" disabled></td>
+                <td><input type="input" id="VATAmountField" class="VATAmountField disabledField" placeholder="0.00" title="12% of vatable sales" disabled></td>
             </tr>
             <tr>
                 <!-- Total Sales -->
                 <td><label for="totalSales" class="totalSales">Total Sales</td>
-                <td><input type="input" id="totalSalesField" class="totalSalesField disabledField" placeholder="0.00" disabled></td>
+                <td><input type="input" id="totalSalesField" class="totalSalesField disabledField" placeholder="0.00" title="Gross sales (VAT-inclusive)" disabled></td>
             </tr>
         </table>
 
