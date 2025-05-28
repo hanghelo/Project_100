@@ -12,20 +12,18 @@ const totalSalesField = document.getElementById("totalSalesField");
 
 // 02. NUMBER FORMATTING FUNCTION
 function isUserInputANumber () {
-    const totalSalesVatInclValue = Number(totalSalesVatInclField.value);
-    console.log (typeof totalSalesVatInclValue);
-    console.log (totalSalesVatInclValue);
+    // Get the input value, trim spaces, and remove commas
+    const inputValue = totalSalesVatInclField.value.trim().replace(/,/g, '');
+    const totalSalesVatInclValue = Number(inputValue);
 
     // checks if the user input is a number and not a NaN
     if (typeof totalSalesVatInclValue === 'number' && !isNaN(totalSalesVatInclValue)) {
-        console.log ('yehey');
         computationOfEverything (totalSalesVatInclValue);
         // Show message
         messageBox.style.display = "block"; // Show container
         message.textContent = "✅ Computation has been completed!";
 
     } else {
-        console.log ('Input is not a number');
         // Show message
         messageBox.style.display = "block"; // Show container
         message.textContent = "❌ Invalid. Please check your input";
@@ -42,12 +40,6 @@ function computationOfEverything (totalSalesVatInclValue) {
     lessVATField.value = LessVATValue;
     Total_1Field.value = Total_1Value;
 
-    console.log (`Your total sales (VAT incl): ${totalSalesVatInclValue}`)  //MY-NOTES:DONE
-    console.log (`Your input VAT : ${LessVATValue}`);                       //MY-NOTES:DONE
-    console.log (`Your sales less input VAT : ${Total_1Value}`);    
-    const validation_1 = (LessVATValue + Total_1Value);   // For validation only
-    console.log (validation_1);
-
     /******************** WITHHOLDING TAX ************************/
 
     const lessWithholdingTaxValue = Number((Total_1Value * 0.02).toFixed(2));
@@ -55,15 +47,6 @@ function computationOfEverything (totalSalesVatInclValue) {
     
     lessWithholdingTaxField.value = lessWithholdingTaxValue;
     Total_2Field.value = Total_2Value;
-
-
-    console.log (`Withholding Tax (2%) ${lessWithholdingTaxValue}`);
-
-
-    
-    console.log (`Less Withholding Tax ${Total_2Value}`);
-    const validation_2 = (lessWithholdingTaxValue + Total_2Value); // Validation, should be equal to total field 1
-    console.log (validation_2);
 
     /********************* VAT OUTPUT ***********************/
 
@@ -75,13 +58,10 @@ function computationOfEverything (totalSalesVatInclValue) {
     vatableSalesField.value = Total_1Value;
     VATAmountField.value = LessVATValue;
     totalSalesField.value = totalSalesVatInclValue;
-
-    console.log (`VAT (12% from less input VAT) : ${addVATValue}`);
-    console.log (`amountDueValue: ${amountDueValue}`);
 }
 
 function clearFields () {
-    totalSalesVatInclField.value = "0.00";
+    totalSalesVatInclField.value = "Sample: 100000.00";
     totalSalesVatInclField.value = "0.00";
     lessVATField.value = "0.00";
     Total_1Field.value = "0.00";
