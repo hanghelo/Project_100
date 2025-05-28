@@ -20,8 +20,16 @@ function isUserInputANumber () {
     if (typeof totalSalesVatInclValue === 'number' && !isNaN(totalSalesVatInclValue)) {
         console.log ('yehey');
         computationOfEverything (totalSalesVatInclValue);
+        // Show message
+        messageBox.style.display = "block"; // Show container
+        message.textContent = "✅ Computation has been completed!";
+
     } else {
         console.log ('Input is not a number');
+        // Show message
+        messageBox.style.display = "block"; // Show container
+        message.textContent = "❌ Invalid. Please check your input";
+
     }
 }
 
@@ -73,15 +81,32 @@ function computationOfEverything (totalSalesVatInclValue) {
 }
 
 function clearFields () {
-    totalSalesVatInclField.value = "";
+    totalSalesVatInclField.value = "0.00";
+    totalSalesVatInclField.value = "0.00";
+    lessVATField.value = "0.00";
+    Total_1Field.value = "0.00";
+    lessWithholdingTaxField.value = "0.00";
+    Total_2Field.value = "0.00";
+    addVATField.value = "0.00";
+    amountDueField.value = "0.00";
+    vatableSalesField.value = "0.00";
+    VATAmountField.value = "0.00";
+    totalSalesField.value =  "0.00";
+
+    messageBox.style.display = "none"; // Show container
 }
 
 // Buttons
 const computeNowBTN = document.querySelector('.computeNowBTN');
-const cancel = document.querySelector ('.cancel');
+const cancel = document.querySelector ('.resetBTN');
+const messageBox = document.querySelector ('.messageBox');
+const message = document.querySelector('.message');
+
 
 computeNowBTN.addEventListener ('click', isUserInputANumber);
 cancel.addEventListener ('click', clearFields);
+
+
 
 
 
