@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM - getElemenById</title>
+    <style>
+        body {
+            font-size: 16px;
+            line-height: 140%;
+            color: #282624;
+            font-weight: 300;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
+        }
+
+        div {
+            display: block;
+            margin: auto;
+            width: 420px;
+            border: 10px solid darkcyan;
+            padding: 20px;
+        }
+        
+        p {
+            font-style: italic;
+        }
+
+        ul li {
+            padding: 10px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            border: 5px solid black;
+        }
+        
+        button {
+            margin: auto;
+            margin-top: 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="title">Bucket List</h1>
+        <p id="description">List of things I would want to do.</p>
+        <ul id="parent">
+            <li class="learn" id="bl-0">Become fluent in a new language</li>
+            <li class="learn" id="bl-1">Learn how to code</li>
+            <li class="learn" id="bl-2">Take a kick-boxing class</li>
+            <li class="learn" id="bl-3">Learn how to play an instrument</li>
+            <li class="experience" id="bl-4">Swim under a waterfall</li>
+            <li class="experience" id="bl-5">Adopt a rescue animal</li>
+        </ul>
+
+        <img src="https://media.istockphoto.com/id/960544896/photo/conceptual-and-inspirational.jpg?s=612x612&w=0&k=20&c=5xpozXwU4qYxR4_AKpwzniIj-b_7NcNmwiAQuRpOwBU=" alt="Bucket List Image" onclick="updateAttribute()">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
