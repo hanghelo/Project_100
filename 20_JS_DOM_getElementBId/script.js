@@ -43,3 +43,22 @@ const deleteList = document.getElementById("bl-1");
 //Outputs: <li class="learn" id="bl-1">Learn how to code</li>
 console.log(list.removeChild (deleteList).innerHTML);
 //Outputs: Learn how to code
+
+// MY-NOTES: QUERY SELECTOR
+// MY-NOTES: SELECTING HTML TAG USING QUERY SELECTOR METHOD
+
+// Sample 1: Selecting the paragraph tag
+const paragraph = document.querySelector("p");      
+console.log (paragraph);
+
+// Sameple 2: Selecting and img and its source and setting new value
+const img = document.querySelector("img");      // Output: <p id="description">List of things I would want to do.</p>
+console.log (img.getAttribute("src"));          // Output: https://media.istockphoto.com/id/960544896/photo/conceptual-and-inspirational.jpg?s=612x612&w=0&k=20&c=5xpozXwU4qYxR4_AKpwzniIj-b_7NcNmwiAQuRpOwBU=
+
+function updateAttribute () {
+    img.setAttribute("src","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfpg9E31kyD-1kfVs_46c4TlpCfFVSWokgkg&s"); 
+    // Using img, we are selecting the image tag and using the setAttribute method we can define the attribute to be selected and assign the new value
+
+    img.setAttribute("alt","Pikachu");
+    // Using img, we are selecting the image tag and using the setAttribute method we can define the attribute to be selected and assign the new value
+}
