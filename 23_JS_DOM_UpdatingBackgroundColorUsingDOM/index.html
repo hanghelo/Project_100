@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updating Background Color Using JS</title>
+
+    <style>
+        /* Control na 3 columns lang at 2 rows gamit grid*/
+        /*  1. Kailangan ng parent container ng div na icecenter */
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center; /* Centering + no overlap */
+        }
+
+        /*  2. Icenter yung div */
+        .colorcontainer {
+            border: 1px black solid;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            grid-template-rows: repeat(2, 1fr);    /* 2 rows */
+            width: 600px;                          /* optional: control total width */
+            gap: 10px;
+            padding: 40px;
+
+            /* Center the color container */
+        }
+
+        .color {
+            border: 1px black solid;
+            aspect-ratio: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="colorcontainer">
+        <div class="color">Red</div>
+        <div class="color">Orange</div>
+        <div class="color">Yellow</div>
+        <div class="color">Green</div>
+        <div class="color">Violet</div>
+        <div class="color">Blue</div>
+    </div>
+</body>
+</html>
