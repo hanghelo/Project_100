@@ -53,4 +53,3 @@ colorContainer3.addEventListener('click', () => {
     box.addEventListener('click', handleBoxClick);
   });
 });
-
