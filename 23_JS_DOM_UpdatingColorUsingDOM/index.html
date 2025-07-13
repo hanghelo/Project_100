@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Updating the Background Color Using DOM</title>
+  <style>
+
+    /* Centering the items inside the body */
+    /* body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    } */
+
+    /* Other way */
+    body {
+      display: grid;
+      place-items: center;  /* shorthand for align-items and justify-items */
+      height: 100vh;
+      margin: 0;
+    }
+
+
+    .color-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);   /*3 columns */
+      grid-template-rows: repeat(2, 1fr);      /*2 rows */
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .colorbox {
+      border: 1px solid black;
+      padding: auto;
+      width: 100px;
+      aspect-ratio: 1;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .colorbox:hover {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="color-container">
+    <div class="colorbox color">Red</div>
+    <div class="colorbox color">Orange</div>
+    <div class="colorbox color">Yellow</div>
+    <div class="colorbox color">Green</div>
+    <div class="colorbox color">Violet</div>
+    <div class="colorbox color">Blue</div>
+  </div>
+  <div class="color-container2">
+    What color?
+  </div>
+
+  <div class="color-container3">
+    What color2?
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
