@@ -11,3 +11,46 @@ boxes.forEach( boxToselect => {                                     // 2. Code h
     boxToselect.style.color = 'white';                              // 2.5 Select the text color and assign white to every div
     });
 });
+
+///////// color-container2
+// asking user input
+const whatColor = document.querySelector(".color-container2");
+console.log (whatColor);
+
+whatColor.addEventListener('click', () => {
+    
+    // Ask user for input
+    const userColor = prompt("What color do you want?");
+    
+    if (userColor) {
+        whatColor.style.backgroundColor = userColor.toLowerCase();
+        whatColor.style.color = 'white'; // Optional: make text readable
+    }
+});
+
+///////// color-container2
+// passing color from one div to another div
+const colorContainer3 = document.querySelector(".color-container3");
+
+colorContainer3.addEventListener('click', () => {
+  console.log("Waiting for box selection...");
+
+  function handleBoxClick(event) {
+    const selectedColor = event.target.textContent.trim().toLowerCase();
+    console.log("You selected:", selectedColor);
+
+    colorContainer3.style.backgroundColor = selectedColor;
+    colorContainer3.style.color = 'white';
+
+    // Remove this temporary listener from all boxes
+    boxes.forEach(box => {
+      box.removeEventListener('click', handleBoxClick);
+    });
+  }
+
+  // Temporarily add the listener to each box
+  boxes.forEach(box => {
+    box.addEventListener('click', handleBoxClick);
+  });
+});
+
