@@ -109,3 +109,27 @@ console.log (num1, num2, num3);         // Output: 100 200 30
 /*********************************************************************/
 
 // MY-NOTES: Swapping Variables in Destructuring Array
+
+// MY-NOTES: Manual Way of Swapping Variables not Using Destructuring
+let x = 100, y = 200;
+
+const temp = x;
+console.log (temp);             // Output: 100
+
+x = y;                          // Output: 200
+y = temp;                       // Outpu: 100
+console.log (x,y);              // Output: 200 100
+
+// MY-NOTES: Swapping Variables Using Destructuring
+[x, y] = [y, x];
+console.log (x,y);              // Output: 100, 200 (binalik ko sa dati)
+
+// MY-NOTES: Destructuring with Function or Extracting data from an array returned from a function
+// ginagamit pangkuha ng data sa API
+function checkOutItems (firstItem, secondItem, thirdItem) {
+    return [firstItem, secondItem, thirdItem];
+}
+
+const [firstItem, secondItem, thirdItem] = checkOutItems ("shoes", "tshirt","sunglasses");
+
+console.log (firstItem, secondItem, thirdItem);     // Output: shoes tshirt sunglasses
